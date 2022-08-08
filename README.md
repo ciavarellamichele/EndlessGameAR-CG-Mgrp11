@@ -1,4 +1,4 @@
-# Endless Runner
+# Endless Runner in Realtà Aumentata
 L'obiettivo del progetto era quello di riportare nella Realtà Aumentata un endless game già realizzato e funzionante in Unity utilizzando AR Foundation.
 
 ![](.readme/final-frontier.png)
