@@ -1,52 +1,46 @@
 # Endless Runner
-
-In space, no-one can hear you. (Actual fact.)
+L'obiettivo del progetto era quello di riportare nella Realtà Aumentata un endless game già realizzato e funzionante in Unity utilizzando AR Foundation.
 
 ![](.readme/final-frontier.png)
 
-This project implements an endless runner game by following and extending on the ideas
-in the [Create a 3D Endless Runner from Scratch in Unity](https://www.udemy.com/course/endlessrunner/) Udemy course.
+## Implementazione
 
-I have to say that while following the course was a really good learning experience,
-the coding style in the lectures is just horrible. So ... better to follow the course in space.
+Funzionalità già implementate nel gioco:
 
-Since I'm still learning Unity at this point and am not aware of Unity-specific best
-practices, I'm not sure if I'm was doing the right thing here when trying to keep or 
-save my sanity.
-Also, some of the bugs - such as being able to jump multiple times, or being able to cancel the dying animation through jumping - are not fixed here.
-Anyway, maybe someone does find this project helpful regardless of that.
+- Menù di gioco
+- Movimento orizzontale WASD
+- Salto, rotazione, lancio abilità e score
+- Generazione nuove piattaforme
+- Eliminazione piattaforme
+- Restart game
 
-## Implementation
+![image](https://user-images.githubusercontent.com/108952275/183376043-fcdd954d-7d46-4d63-a945-39ca5f78fda0.png)
 
-Core ideas:
-
-- Tiles are being spawned by a "virtual character" moving ahead of the player.
-- The player isn't moving horizontally at all, the world is.
-- Platforms are spawned from an object pool and everything behind the player is recycled immediately.
-
-This project uses:
-
-- Object pooling,
-- The animation system with blended animations,
-- Animation triggers (shooting magic, footstep sounds, ...),
-- A bunch of particle systems,
-- Overlapping colliders with initially deactivated physics for exploding wall bricks.
-
-The following video shows the continuous world generation by using physics
-collisions triggers:
+Il video seguente mostra la generazione continua del mondo:
 
 ![Platform generation video](.readme/early-animation.webp)
 
-Here's some gameplay footage:
+Esempio del gioco:
 
 ![Gameplay video](.readme/late-game.webp)
 
-A platform prefab showing the triggers used for spawning new platforms
-ahead of the player:
+Funzionalità da noi implementate: 
+- Swipe per il movimento orizzontale e per il salto
+- Double Tap per l’abilità
+- Divisione in zone per la rotazione
 
-![](.readme/box-triggers.png)
+![image](https://user-images.githubusercontent.com/108952275/183377183-11412a46-208a-4eb1-a628-528b7eab0390.png)
 
-One of the bigger obstacles in the game, the wall, being blasted away
-by the magic spell projectile:
+Soluzioni per portare il gioco in Realtà Aumentata:
 
-![](.readme/blasting-boxes.jpg)
+- Utilizzare le coordinate della piattaforma iniziale come punto di partenza per la generazione del mondo
+- Resize intero mondo e player
+- Fermare la generazione dei piani per evitare sovrapposizione plane e piattaforme
+- Aggiunta di un piano per triggerare la morte
+- Rilancio AR Session dopo che il player muore ma ha ancora vite a disposizione
+
+Inoltre è stato risolto il bug del gioco originale relativo alla possibiltà di saltare più volte.
+
+Esempio gioco in realtà aumentata:
+
+![image](https://user-images.githubusercontent.com/108952275/183377419-486eebec-3027-4b95-a631-427609209c8a.png)
