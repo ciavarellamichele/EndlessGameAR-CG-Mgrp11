@@ -14,8 +14,6 @@ Funzionalità già implementate nel gioco:
 - Eliminazione piattaforme
 - Restart game
 
-![image](https://user-images.githubusercontent.com/108952275/183376043-fcdd954d-7d46-4d63-a945-39ca5f78fda0.png)
-
 Il video seguente mostra la generazione continua del mondo:
 
 ![Platform generation video](.readme/early-animation.webp)
